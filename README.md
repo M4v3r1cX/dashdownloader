@@ -14,10 +14,10 @@ Every single tumblr downloader app is bloated as hell and has ads. I wanted to m
 * Android 5 onwards
 
 # Todo
-* Add an icon and make the app prettier overall
+* ~~Add an icon and make the app prettier overall~~ Done!
 * Add option to send directly to app instead of manually copying/pasting url
-* Show a notification instead of a toast when a video is downloaded
-* Publish in Play Store and F-Droid
+* ~~Show a notification instead of a toast when a video is downloaded~~ Done!
+* Publish in F-Droid, optional Play Store.
 
 # Wtf is up with that name.
 Remember when people wanted to make a tumblr convention, and wanted to call it tumblrcon, but Tumblr said they'd sue since Tumblr is copyrighted, so they called it dashcon instead? Yeah.

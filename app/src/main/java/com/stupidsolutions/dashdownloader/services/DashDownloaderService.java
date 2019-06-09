@@ -11,7 +11,7 @@ public class DashDownloaderService {
         this._context = context;
     }
 
-    public void process(String tumblrUrl) throws Exception{
+    public void process(String tumblrUrl) throws Exception {
         VideoDownloadService videoDownloadService = new VideoDownloadService(_context);
 
         String[] partes = tumblrUrl.split("/");
@@ -27,10 +27,10 @@ public class DashDownloaderService {
         String html = new HTMLService().execute(url).get();
 
         if (html != null && !html.isEmpty()) {
-            String newUrl = html.substring((html.lastIndexOf("<source src=") + 1),(html.lastIndexOf("type=\"video/mp4\">")));
+            String newUrl = html.substring((html.lastIndexOf("<source src=") + 1), (html.lastIndexOf("type=\"video/mp4\">")));
             if (newUrl != null && !newUrl.isEmpty()) {
                 newUrl = newUrl.replace("source src=\"", "");
-                newUrl = newUrl.replace("\"","");
+                newUrl = newUrl.replace("\"", "");
 
                 boolean downloaded = videoDownloadService.execute(newUrl, videoName).get();
 
@@ -47,7 +47,18 @@ public class DashDownloaderService {
                 throw new Exception("Could find video in " + url);
             }
         } else {
-            throw new Exception("Couldn't retrieve source in " + url);
+            // Intento 2
+            /*String html2 = new HTMLService().execute(tumblrUrl).get();
+            if (html2 != null && !html2.isEmpty()) {
+                String ss = html2.substring(0, 1100);
+                String newUrl = ss.substring((ss.lastIndexOf("<source src=") + 1), (ss.lastIndexOf("type=\"video/mp4\" />")));
+                if (newUrl != null && !newUrl.isEmpty()) {
+
+                }
+            } else {
+                throw new Exception("Couldn't retrieve source in " + url);
+            }*/
+            throw new Exception("HTML format not yet implemented, I'm working on it! " + url);
         }
     }
 }

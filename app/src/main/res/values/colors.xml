@@ -3,4 +3,5 @@
     <color name="colorPrimary">#173245</color>
     <color name="colorPrimaryDark">#173245</color>
     <color name="colorAccent">#FFF</color>
+    <color name="tumblrColor">#01203f</color>
 </resources>
