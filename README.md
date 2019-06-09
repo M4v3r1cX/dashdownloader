@@ -1,8 +1,8 @@
 # Dash Downloader
-Dash Downloader is a simple App to download videos from Tumblr.
+Dash Downloader is a simple Android App to download videos from Tumblr.
 
 # Why are you doing this?
-Every single tumblr downloader app is bloated as hell and has ads. I wanted to make a FOSS app that would just download stuff without much hassle.
+Every single tumblr downloader app is bloated as hell and has ads. I wanted to make a FOSS app that would just download stuff without much hassle and without any Google libraries.
 
 # Usage
 - Install app
