@@ -6,6 +6,9 @@ Dash Downloader is a simple Android App to download videos from Tumblr.
 - No google integration so you can run it without gapps
 - Downloads videos. What else do you want?
 
+# Download it!
+Get it from the [releases](https://github.com/M4v3r1cX/dashdownloader/releases)
+
 # Screenshot
 ![alt text](https://raw.githubusercontent.com/M4v3r1cX/m4v3r1cx.github.io/master/images/screenshot.png)
 
