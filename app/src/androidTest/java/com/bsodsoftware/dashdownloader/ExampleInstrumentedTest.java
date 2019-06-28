@@ -1,4 +1,4 @@
-package com.stupidsolutions.dashdownloader;
+package com.bsodsoftware.dashdownloader;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

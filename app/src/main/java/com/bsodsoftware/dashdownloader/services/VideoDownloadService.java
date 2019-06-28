@@ -1,17 +1,10 @@
-package com.stupidsolutions.dashdownloader.services;
+package com.bsodsoftware.dashdownloader.services;
 
 import android.app.DownloadManager;
 import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
-
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.net.URL;
-import java.net.URLConnection;
 
 public class VideoDownloadService extends AsyncTask<String, String, Boolean> {
 

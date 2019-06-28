@@ -1,4 +1,4 @@
-package com.stupidsolutions.dashdownloader;
+package com.bsodsoftware.dashdownloader;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.stupidsolutions.dashdownloader.services.DashDownloaderService;
+import com.bsodsoftware.dashdownloader.services.DashDownloaderService;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

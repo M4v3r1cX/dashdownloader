@@ -1,4 +1,4 @@
-package com.stupidsolutions.dashdownloader.services;
+package com.bsodsoftware.dashdownloader.services;
 
 import android.os.AsyncTask;
 

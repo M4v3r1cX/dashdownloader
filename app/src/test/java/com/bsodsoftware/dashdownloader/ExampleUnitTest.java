@@ -1,4 +1,4 @@
-package com.stupidsolutions.dashdownloader;
+package com.bsodsoftware.dashdownloader;
 
 import org.junit.Test;
 
