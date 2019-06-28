@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/white"
-        android:text="1- Get the post permalink by click send > Open in Chrome/Firefox\n2- Copy the link, paste it in the box\n3- Click download and wait!"
+        android:text="1- Find a video you like\n2- Hit the share/send button in the app\n3- On the bottom row where you see all the apps, search for Dash Downloader\n4- When the text appears on the url bar, hit the Download button below and wait!"
         android:layout_below="@id/iconito"/>
 
     <EditText

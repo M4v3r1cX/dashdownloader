@@ -37,7 +37,7 @@ public class DashDownloaderService {
                 String message = "";
 
                 if (downloaded) {
-                    message = "Video successfuly downloaded.";
+                    message = "Video successfuly queued for download. Check your notifications!";
                 } else {
                     message = "Error downloading video.";
                 }

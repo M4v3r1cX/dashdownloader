@@ -1,21 +1,31 @@
 # Dash Downloader
 Dash Downloader is a simple Android App to download videos from Tumblr.
 
+# Features
+- No ads, not now, not ever
+- No google integration so you can run it without gapps
+- Downloads videos. What else do you want?
+
+# Screenshot
+![alt text](https://raw.githubusercontent.com/M4v3r1cX/m4v3r1cx.github.io/master/images/screenshot.png)
+
 # Why are you doing this?
 Every single tumblr downloader app is bloated as hell and has ads. I wanted to make a FOSS app that would just download stuff without much hassle and without any Google libraries.
 
 # Usage
 - Install app
-- Get permalink from post by clicking the send button > Open in Firefox/Chrome/your browser of choice
-- Paste URL in the box
-- Click download and profit
+- Click on the share/send button of the video post you want
+- On the bottom row where you see all the apps, search for Dash Downloader
+- When the link appears in the url bar, click download
+- profit
 
 # Requirements
 * Android 5 onwards
 
 # Todo
+* Some videos can't be downloaded because of the way the html is parsed. I still can't find the goddamn reason, but as soon as I find it I'll update the app.
 * ~~Add an icon and make the app prettier overall~~ Done!
-* Add option to send directly to app instead of manually copying/pasting url
+* ~~Add option to send directly to app instead of manually copying/pasting url~~ Done!
 * ~~Show a notification instead of a toast when a video is downloaded~~ Done!
 * Publish in F-Droid, optional Play Store.
 
