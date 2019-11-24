@@ -26,7 +26,7 @@ Every single tumblr downloader app is bloated as hell and has ads. I wanted to m
 * Android 5 onwards
 
 # Todo
-* Some videos can't be downloaded because of the way the html is parsed. I still can't find the goddamn reason, but as soon as I find it I'll update the app.
+* ~~Some videos can't be downloaded because of the way the html is parsed. I still can't find the goddamn reason, but as soon as I find it I'll update the app.~~ Done!
 * ~~Add an icon and make the app prettier overall~~ Done!
 * ~~Add option to send directly to app instead of manually copying/pasting url~~ Done!
 * ~~Show a notification instead of a toast when a video is downloaded~~ Done!
