@@ -1,6 +1,12 @@
 package com.bsodsoftware.dashdownloader;
 
+import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private DashDownloaderService dashDownloaderService;
     private Button btnDownload;
     private EditText txtLink;
+    private final int STORAGE_PERMISSION = 2501;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +37,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 txtLink.setText(intent.getStringExtra(Intent.EXTRA_TEXT));
             }
         }
+
+        checkPermissions();
     }
+
+    private void checkPermissions() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission_group.STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, STORAGE_PERMISSION);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        switch (requestCode) {
+            case STORAGE_PERMISSION: {
+                if (grantResults.length > 0 && grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.setMessage("DashDownloader needs Storage access permission in order to download videos.\nPlease grant the permission!")
+                            .setTitle("Error")
+                            .setCancelable(false)
+                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    checkPermissions();
+                                }
+                            });
+                    AlertDialog alert = builder.create();
+                    alert.show();
+                }
+            }
+        }
+    }
+
 
     private void init() {
         setServices();
@@ -68,6 +105,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } catch (Exception ex) {
             Toast.makeText(this, "Error: " + ex.getMessage(), Toast.LENGTH_LONG).show();
         }
-
     }
 }

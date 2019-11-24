@@ -3,17 +3,19 @@ package com.bsodsoftware.dashdownloader.services;
 import android.content.Context;
 import android.widget.Toast;
 
+import java.util.concurrent.ExecutionException;
+
 public class DashDownloaderService {
 
     private Context _context;
+    VideoDownloadService videoDownloadService;
 
     public DashDownloaderService(Context context) {
         this._context = context;
+        this.videoDownloadService = new VideoDownloadService(_context);
     }
 
     public void process(String tumblrUrl) throws Exception {
-        VideoDownloadService videoDownloadService = new VideoDownloadService(_context);
-
         String[] partes = tumblrUrl.split("/");
         String[] forusername = partes[2].split("\\.");
 
@@ -32,33 +34,39 @@ public class DashDownloaderService {
                 newUrl = newUrl.replace("source src=\"", "");
                 newUrl = newUrl.replace("\"", "");
 
-                boolean downloaded = videoDownloadService.execute(newUrl, videoName).get();
-
-                String message = "";
-
-                if (downloaded) {
-                    message = "Video successfuly queued for download. Check your notifications!";
-                } else {
-                    message = "Error downloading video.";
-                }
-
-                Toast.makeText(_context, message, Toast.LENGTH_LONG).show();
+                queueDownload(newUrl, videoName);
             } else {
                 throw new Exception("Could find video in " + url);
             }
         } else {
             // Intento 2
-            /*String html2 = new HTMLService().execute(tumblrUrl).get();
+            String tumblrServer = "https://ve.media.tumblr.com/tumblr_";    // Base url
+            String html2 = new HTMLService().execute(tumblrUrl).get();
             if (html2 != null && !html2.isEmpty()) {
-                String ss = html2.substring(0, 1100);
-                String newUrl = ss.substring((ss.lastIndexOf("<source src=") + 1), (ss.lastIndexOf("type=\"video/mp4\" />")));
-                if (newUrl != null && !newUrl.isEmpty()) {
+                String searchPhrase = "media.tumblr.com/tumblr_";
+                int startIndex = html2.lastIndexOf(searchPhrase);
+                int mainIndex = startIndex + searchPhrase.length();
+                String videoId = html2.substring(mainIndex, mainIndex + 17);
+                if (videoId != null && !videoId.isEmpty()) {
+                    String newUrl = tumblrServer + videoId + ".mp4";
 
+                    queueDownload(newUrl, videoName);
                 }
             } else {
                 throw new Exception("Couldn't retrieve source in " + url);
-            }*/
-            throw new Exception("HTML format not yet implemented, I'm working on it! " + url);
+            }
         }
+    }
+
+    private void queueDownload(String url, String videoName) throws ExecutionException, InterruptedException {
+        boolean downloaded = videoDownloadService.execute(url, videoName).get();
+        String message = "";
+        if (downloaded) {
+            message = "Video successfuly queued for download. Check your notifications!";
+        } else {
+            message = "Error downloading video.";
+        }
+
+        Toast.makeText(_context, message, Toast.LENGTH_LONG).show();
     }
 }
