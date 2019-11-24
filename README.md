@@ -1,5 +1,8 @@
-# Dash Downloader
-Dash Downloader is a simple Android App to download videos from Tumblr.
+<p align="center"><img src="https://raw.githubusercontent.com/M4v3r1cX/dashdownloader/master/app/src/main/res/drawable/dashdownicon.png" heigh="100" width="100" /></p>
+<h2 align="center">Dash Downloader</h2>
+<p align="center"><a href="https://github.com/M4v3r1cX/dashdownloader/releases" alt="GitHub release"><img src="https://img.shields.io/github/release/M4v3r1cX/dashdownloader.svg" ></a></p>
+
+<p align="center">Dash Downloader is a simple Android App to download videos from Tumblr.</p>
 
 # Features
 - No ads, not now, not ever
@@ -10,7 +13,7 @@ Dash Downloader is a simple Android App to download videos from Tumblr.
 Get it from the [releases](https://github.com/M4v3r1cX/dashdownloader/releases)
 
 # Screenshot
-![alt text](https://raw.githubusercontent.com/M4v3r1cX/m4v3r1cx.github.io/master/images/screenshot.png)
+<img src="https://raw.githubusercontent.com/M4v3r1cX/m4v3r1cx.github.io/master/images/screenshot.png" heigh="500" width="500" />
 
 # Why are you doing this?
 Every single tumblr downloader app is bloated as hell and has ads. I wanted to make a FOSS app that would just download stuff without much hassle and without any Google libraries.
