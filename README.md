@@ -25,12 +25,9 @@ Every single tumblr downloader app is bloated as hell and has ads. I wanted to m
 # Requirements
 * Android 5 onwards
 
-# Todo
-* ~~Some videos can't be downloaded because of the way the html is parsed. I still can't find the goddamn reason, but as soon as I find it I'll update the app.~~ Done!
-* ~~Add an icon and make the app prettier overall~~ Done!
-* ~~Add option to send directly to app instead of manually copying/pasting url~~ Done!
-* ~~Show a notification instead of a toast when a video is downloaded~~ Done!
-* Publish in F-Droid, optional Play Store.
+# Planned Features
+- Add module to download MP3 files just because
+- Add way to download instagram pics if I feel like it
 
 # Wtf is up with that name.
 Remember when people wanted to make a tumblr convention, and wanted to call it tumblrcon, but Tumblr said they'd sue since Tumblr is copyrighted, so they called it dashcon instead? Yeah.
