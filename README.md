@@ -38,5 +38,5 @@ Remember when people wanted to make a tumblr convention, and wanted to call it t
 
 # License
 
-All MIT license and stuff. I doubt anyone will have the exact specific case use I had but if you're crazy enough to use this piece of crap code, go wild. It's yours. I don't want it, that's why I'm sharing it.
+All GPLv3 and stuff. I doubt anyone will have the exact specific case use I had but if you're crazy enough to use this piece of crap code, go wild. It's yours. I don't want it, that's why I'm sharing it.
 
