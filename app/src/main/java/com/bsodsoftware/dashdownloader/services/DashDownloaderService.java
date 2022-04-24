@@ -22,13 +22,22 @@ public class DashDownloaderService {
         String videoid = partes[4];
         String videoName = username + "_" + videoid + ".mp4";
 
-        String tumblrServer = "https://ve.media.tumblr.com/tumblr_";    // Base url
+        String tumblrServer = "https://va.media.tumblr.com/tumblr_";    // Base url
         String html2 = new HTMLService().execute(tumblrUrl).get();
         if (html2 != null && !html2.isEmpty()) {
-            String searchPhrase = "media.tumblr.com/tumblr_";
-            int startIndex = html2.lastIndexOf(searchPhrase);
-            int mainIndex = startIndex + searchPhrase.length();
-            String videoId = html2.substring(mainIndex, mainIndex + 17);
+            int startIndex = html2.indexOf(tumblrUrl);
+            int finalIndex = startIndex + 8000;
+            String relevantText = html2.substring(startIndex, finalIndex);
+            html2 = null;   // memory cleanup
+            startIndex = relevantText.indexOf(tumblrServer);
+
+            if (startIndex == -1) {
+                tumblrServer = "https://ve.media.tumblr.com/tumblr_";
+                startIndex = relevantText.indexOf(tumblrServer);
+            }
+            int mainIndex = startIndex + tumblrServer.length();
+            String videoId = relevantText.substring(mainIndex, mainIndex + 17);
+
             if (videoId != null && !videoId.isEmpty()) {
                 String newUrl = tumblrServer + videoId + ".mp4";
 
@@ -37,6 +46,7 @@ public class DashDownloaderService {
                 throw new Exception("Could get video tumblr video id " + videoId);
             }
         } else {
+            // Method for old videos uploaded pre 2015? 2016? or so
             String baseurl = "https://www.tumblr.com/video/?1/?2/700/";
             String url = baseurl.replace("?1", username);
             url = url.replace("?2", videoid);
